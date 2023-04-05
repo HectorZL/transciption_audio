@@ -12,7 +12,8 @@ This Python script uses the "whisper" package to transcribe an audio file to tex
 ## Installation
 
 1. Clone this repository to your local machine.
-2. Install the required dependencies by running: `pip install -r requirements.txt`
+2. Install the libry "whisper" by running the following command in the terminal: 
+   `pip install whisper`
 
 ## Usage
 

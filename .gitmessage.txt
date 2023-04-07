@@ -1,0 +1,5 @@
+feat(component): add new feature
+
+Add a new feature to the component
+
+BREAKING CHANGE: none

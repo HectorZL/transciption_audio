@@ -15,3 +15,10 @@ __pycache__/
 
 # Ignorar los archivos Thumbs.db de Windows
 Thumbs.db
+
+# Ignorar los archivos package-lock.json y los package.json
+package.json
+package-lock.json
+
+#ignorar the node_modules
+node_modules

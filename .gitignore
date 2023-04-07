@@ -11,3 +11,9 @@ node_modules/
 
 #ignorar los archivos txt
 *.txt
+
+#ignorar los archivos de audio
+*.mp3
+*.m4a
+*.wav
+

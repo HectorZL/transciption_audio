@@ -1,24 +1,13 @@
-# Ignorar los archivos de cache de Python
-__pycache__/
 
 # Ignorar los archivos compilados de Python
-*.pyc
-
-# Ignorar los archivos de respaldo de Vim
-*~.swp
-
-# Ignorar los archivos de respaldo de Emacs
-*~#
-
-# Ignorar los archivos .DS_Store de macOS
-.DS_Store
-
-# Ignorar los archivos Thumbs.db de Windows
-Thumbs.db
+pyc
 
 # Ignorar los archivos package-lock.json y los package.json
 package.json
 package-lock.json
 
 #ignorar the node_modules
-node_modules
+node_modules/
+
+#ignorar los archivos txt
+*.txt

@@ -15,16 +15,19 @@ class WhisperGUI:
         self.audio_file = None
 
         # widgets
-        self.select_audio_button = tk.Button(self.master, text="Seleccionar archivo de audio",
-                                             command=self.select_audio)
+        self.select_audio_button = tk.Button(self.master, text="Seleccionar archivo de audio", command=self.select_audio)
         self.transcribe_button = tk.Button(self.master, text="Transcribir", command=self.transcribe_audio)
-        self.output_label = tk.Label(self.master,
-                                     text="Seleccione un archivo de audio para comenzar la transcripción")
+        self.output_label = tk.Label(self.master, text="Seleccione un archivo de audio y modelo para comenzar la transcripción")
+
+        self.model_var = tk.StringVar(self.master)
+        self.model_var.set("base")  # Default value
+        self.model_menu = tk.OptionMenu(self.master, self.model_var, "base", "small", "medium", "large")
 
         self.output_dir = os.getcwd()
 
         # disposición de los widgets en la ventana
         self.select_audio_button.pack()
+        self.model_menu.pack()
         self.transcribe_button.pack()
         self.output_label.pack()
 
@@ -42,13 +45,13 @@ class WhisperGUI:
             self.output_label["text"] = "Transcribiendo..."
             self.master.update_idletasks()
 
-            # Cargamos el modelo base de Whisper
-            model = whisper.load_model("base")
+            # Cargamos el modelo seleccionado de Whisper
+            model_name = self.model_var.get()
+            model = whisper.load_model(model_name)
 
             result = model.transcribe(self.audio_file)
 
-
-            # Accedemos al valor de la clave 'text' para obtener la transcripción en formato de texto 
+            # Accedemos al valor de la clave 'text' para obtener la transcripción en formato de texto
             texto_resultado = result["text"]
 
             with open(os.path.join(self.output_dir, "prueba.txt"), "w") as archivo_txt:
